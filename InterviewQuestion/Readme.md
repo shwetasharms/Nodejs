@@ -89,7 +89,6 @@ npm is the default package manager for Node.js, allowing developers to install, 
 ### What is the difference between require() and import?
 
 require() is used in CommonJS modules (default in Node.js).
-
 import is used in ES Modules (ESM). Requires "type": "module" in package.json.
 
 [Read more about npm](https://www.npmjs.com/)
