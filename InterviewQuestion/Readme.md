@@ -288,22 +288,32 @@ Node.js provides the `fs` module to handle file operations like reading (`fs.rea
 
 [Read more about file operations]
 
+---
+
 # ⚙️ Intermediate-Level 
 
 ### What is middleware in Node.js (Express)?
 
-Middleware functions have access to req, res, and next(). They are used for logging, authentication, error handling, etc.
+ Middleware functions have access to req, res, and next(). They are used for logging, authentication, error handling, etc.
+
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### WWhat are streams in Node.js?
 
-Streams are used to handle reading/writing files or data in chunks. Types:
+ Streams are used to handle reading/writing files or data in chunks. Types:
 
-- Readable
-- Writable
-- Duplex (both read and write)
-- Transform (e.g., compression)
+ - Readable
+ - Writable
+ - Duplex (both read and write)
+ - Transform (e.g., compression)
+
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
@@ -311,83 +321,121 @@ Streams are used to handle reading/writing files or data in chunks. Types:
 
  A buffer stores binary data in memory outside the V8 heap. It’s used when working with file systems, TCP streams, etc.
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
+
 ---
 
 ### How does the fs module work?
 
-It provides functions to interact with the file system:
+ It provides functions to interact with the file system:
+ const fs = require('fs');
+ fs.readFile('file.txt', 'utf8', (err, data) => {});
 
-const fs = require('fs');
-fs.readFile('file.txt', 'utf8', (err, data) => {});
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### How do you handle errors in Node.js?
 
-- For sync code: use try...catch
-- For async callbacks: check err argument
-- For promises: use .catch() or try/catch with async/await
+ - For sync code: use try...catch
+ - For async callbacks: check err argument
+ - For promises: use .catch() or try/catch with async/await
+
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### What are Promises?
 
-Promises represent the future value of an asynchronous operation. They have .then() and .catch() methods and can be used with async/await.
+ Promises represent the future value of an asynchronous operation. They have .then() and .catch() methods and can be used with async/await.
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 ---
 
 ### Difference between process.nextTick() and setImmediate()?
 
-- process.nextTick(): Executes before any I/O events.
-- setImmediate(): Executes in the next iteration of the event loop.
+ - process.nextTick(): Executes before any I/O events.
+ - setImmediate(): Executes in the next iteration of the event loop.
+
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### What are environment variables and how are they used?
 
-process.env.PORT
-Stored in .env files and loaded via dotenv package.
+ process.env.PORT
+ Stored in .env files and loaded via dotenv package.
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 ---
 
 ### How do you handle file uploads?
 
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+ const multer = require('multer');
+ const upload = multer({ dest: 'uploads/' });
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 ---
 
 ### Difference between spawn, exec, and fork?
 
-- spawn: Launches a process with streaming output.
-- exec: Buffers the entire output (good for small data).
-- fork: Used for spawning new Node.js processes that communicate via IPC.
+ - spawn: Launches a process with streaming output.
+ - exec: Buffers the entire output (good for small data).
+ - fork: Used for spawning new Node.js processes that communicate via IPC.
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 ---
 
 ### What is clustering in Node.js?
 
-- Clustering allows Node.js to use multiple CPU cores to handle more concurrent connections using the cluster module.
+ - Clustering allows Node.js to use multiple CPU cores to handle more concurrent connections using the cluster module.
 
+[Read more about built-in modules](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 ---
 
 # ⚙️ Advanced-Level
 
 ### How does the Event Loop work internally with microtasks and macrotasks?
 
-- Microtasks (e.g., Promises) are processed after each phase.
+ - Microtasks (e.g., Promises) are processed after each phase.
 
-- Macrotasks (e.g., setTimeout) are handled by phases.
+ - Macrotasks (e.g., setTimeout) are handled by phases.
   The loop checks the queue and processes tasks accordingly.
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### How would you scale a Node.js app for 1 million users?
 
-- Use load balancing and clustering.
-- Deploy multiple instances via PM2 or Docker.
-- Use a reverse proxy (e.g., Nginx).
-- Optimize DB access and use caching (Redis).
+ - Use load balancing and clustering.
+ - Deploy multiple instances via PM2 or Docker.
+ - Use a reverse proxy (e.g., Nginx).
+ - Optimize DB access and use caching (Redis).
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
@@ -395,76 +443,112 @@ const upload = multer({ dest: 'uploads/' });
 
  A memory leak occurs when memory that is no longer needed isn’t released. Tools like Chrome DevTools, heapdump, and clinic.js help detect it.
 
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
+
 ---
 
 ### How do you optimize Node.js app performance?
 
-- Use async operations
-- Avoid blocking the event loop
-- Use caching (Redis, memory)
-- Minimize database queries
-- Monitor performance (New Relic, PM2, etc.)
+ - Use async operations
+ - Avoid blocking the event loop
+ - Use caching (Redis, memory)
+ - Minimize database queries
+ - Monitor performance (New Relic, PM2, etc.)
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### What are worker threads?
 
-They enable true parallelism in Node.js. Useful for CPU-intensive tasks that can’t be efficiently handled by the event loop.
+ They enable true parallelism in Node.js. Useful for CPU-intensive tasks that can’t be efficiently handled by the event loop.
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### Security best practices in Node.js?
 
-- Validate and sanitize input
-- Use HTTPS
-- Prevent SQL/NoSQL injection
-- Use helmet for HTTP headers
-- Avoid eval()
-- Use environment variables for secrets
+ - Validate and sanitize input
+ - Use HTTPS
+ - Prevent SQL/NoSQL injection
+ - Use helmet for HTTP headers
+ - Avoid eval()
+ - Use environment variables for secrets
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### How do you manage sessions and authentication?
 
-- Use express-session, passport.js, or JWT
-- Store session in Redis or DB for scaling
-- Secure cookies with HttpOnly and Secure flags
+ - Use express-session, passport.js, or JWT
+ - Store session in Redis or DB for scaling
+ - Secure cookies with HttpOnly and Secure flags
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### How to structure a large-scale Node.js project?
 
-- /controllers
-- /models
-- /routes
-- /middleware
-- /services
-- /utils
+ - /controllers
+ - /models
+ - /routes
+ - /middleware
+ - /services
+ - /utils
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### How would you implement rate limiting?
 
-Use packages like express-rate-limit to prevent abuse:
-const rateLimit = require('express-rate-limit');
-app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
+ Use packages like express-rate-limit to prevent abuse:
+ const rateLimit = require('express-rate-limit');
+ app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### Have you implemented caching?
 
-Yes, using Redis for:
-- API response caching
-- Session storage
-- Avoiding duplicate DB hits
+ Yes, using Redis for:
+ - API response caching
+ - Session storage
+ - Avoiding duplicate DB hits
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
 
 ### Have you implemented caching?
 
-Yes, using Redis for:
-- API response caching
-- Session storage
-- Avoiding duplicate DB hits
+ Yes, using Redis for:
+ - API response caching
+ - Session storage
+ - Avoiding duplicate DB hits
+
+[Read more](https://nodejs.org/api/)
+
+[Back to top](#table-of-contents)
 
 ---
