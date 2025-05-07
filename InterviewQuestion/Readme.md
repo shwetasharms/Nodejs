@@ -329,3 +329,142 @@ fs.readFile('file.txt', 'utf8', (err, data) => {});
 - For promises: use .catch() or try/catch with async/await
 
 ---
+
+### What are Promises?
+
+Promises represent the future value of an asynchronous operation. They have .then() and .catch() methods and can be used with async/await.
+
+---
+
+### Difference between process.nextTick() and setImmediate()?
+
+- process.nextTick(): Executes before any I/O events.
+- setImmediate(): Executes in the next iteration of the event loop.
+
+---
+
+### What are environment variables and how are they used?
+
+process.env.PORT
+Stored in .env files and loaded via dotenv package.
+
+---
+
+### How do you handle file uploads?
+
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+---
+
+### Difference between spawn, exec, and fork?
+
+- spawn: Launches a process with streaming output.
+- exec: Buffers the entire output (good for small data).
+- fork: Used for spawning new Node.js processes that communicate via IPC.
+
+---
+
+### What is clustering in Node.js?
+
+- Clustering allows Node.js to use multiple CPU cores to handle more concurrent connections using the cluster module.
+
+---
+
+# ⚙️ Advanced-Level
+
+### How does the Event Loop work internally with microtasks and macrotasks?
+
+- Microtasks (e.g., Promises) are processed after each phase.
+
+- Macrotasks (e.g., setTimeout) are handled by phases.
+  The loop checks the queue and processes tasks accordingly.
+
+---
+
+### How would you scale a Node.js app for 1 million users?
+
+- Use load balancing and clustering.
+- Deploy multiple instances via PM2 or Docker.
+- Use a reverse proxy (e.g., Nginx).
+- Optimize DB access and use caching (Redis).
+
+---
+
+### What is a memory leak and how do you find one?
+
+ A memory leak occurs when memory that is no longer needed isn’t released. Tools like Chrome DevTools, heapdump, and clinic.js help detect it.
+
+---
+
+### How do you optimize Node.js app performance?
+
+- Use async operations
+- Avoid blocking the event loop
+- Use caching (Redis, memory)
+- Minimize database queries
+- Monitor performance (New Relic, PM2, etc.)
+
+---
+
+### What are worker threads?
+
+They enable true parallelism in Node.js. Useful for CPU-intensive tasks that can’t be efficiently handled by the event loop.
+
+---
+
+### Security best practices in Node.js?
+
+- Validate and sanitize input
+- Use HTTPS
+- Prevent SQL/NoSQL injection
+- Use helmet for HTTP headers
+- Avoid eval()
+- Use environment variables for secrets
+
+---
+
+### How do you manage sessions and authentication?
+
+- Use express-session, passport.js, or JWT
+- Store session in Redis or DB for scaling
+- Secure cookies with HttpOnly and Secure flags
+
+---
+
+### How to structure a large-scale Node.js project?
+
+- /controllers
+- /models
+- /routes
+- /middleware
+- /services
+- /utils
+
+---
+
+### How would you implement rate limiting?
+
+Use packages like express-rate-limit to prevent abuse:
+const rateLimit = require('express-rate-limit');
+app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
+
+---
+
+### Have you implemented caching?
+
+Yes, using Redis for:
+- API response caching
+- Session storage
+- Avoiding duplicate DB hits
+
+---
+
+### Have you implemented caching?
+
+Yes, using Redis for:
+- API response caching
+- Session storage
+- Avoiding duplicate DB hits
+
+---
