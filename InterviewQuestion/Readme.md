@@ -127,6 +127,65 @@ Examples include:
 
 ---
 
+### Is Node.js single-threaded?
+
+ Yes, Node.js runs on a single-threaded event loop architecture using non-blocking I/O operations. However, it can utilize multiple threads internally through the libuv library for tasks like file I/O and cryptography.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What kind of API function is supported by Node.js?
+
+ Node.js supports asynchronous, non-blocking APIs, typically using callbacks, promises, or async/await syntax.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### How does Node.js handle concurrency despite being single-threaded?
+
+ It uses an event-driven architecture and non-blocking I/O via the event loop. Background tasks are delegated to worker threads or the thread pool (libuv), and callbacks are registered to execute when tasks complete.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What is control flow in Node.js?
+
+ Control flow refers to how code execution is managed in asynchronous operations—commonly handled using callbacks, promises, or async/await to control execution order and handle errors.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What is body-parser in Node.js?
+
+ body-parser is middleware that parses incoming request bodies (JSON, URL-encoded, etc.) before the handlers access them, making req.body available.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What is CORS in Node.js?
+
+ CORS (Cross-Origin Resource Sharing) is a mechanism to allow or restrict resources on a web server to be requested from another domain. The cors middleware handles this configuration in Node.js.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
 
 # 2️⃣ Asynchronous Programming
 
