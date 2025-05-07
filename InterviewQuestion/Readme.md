@@ -101,15 +101,25 @@ import is used in ES Modules (ESM). Requires "type": "module" in package.json.
 
 Examples include:
 
-__dirname, __filename
+- __dirname, __filename
+- process
+- global
+- Buffer
+- setTimeout, setInterval
 
-process
+[Read more about npm](https://www.npmjs.com/)
 
-global
+[Back to top](#table-of-contents)
 
-Buffer
+---
 
-setTimeout, setInterval
+### What is the use of __dirname and __filename?
+
+Examples include:
+
+- __dirname: Directory path of the current module.
+
+- __filename: Full path of the current module.
 
 [Read more about npm](https://www.npmjs.com/)
 
@@ -123,6 +133,18 @@ setTimeout, setInterval
 ### How do you handle asynchronous code in Node.js?
 
 Asynchronous code in Node.js is primarily handled using callbacks, Promises, and `async/await`. These methods ensure that long-running operations (e.g., reading files or making HTTP requests) don’t block the execution of other code.
+
+[Read more about asynchronous programming](https://nodejs.org/en/docs)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What is the difference between synchronous and asynchronous functions?
+
+- Synchronous: Executes line by line and blocks further execution.
+
+- Asynchronous: Non-blocking and handles tasks like API calls or file reads using callbacks, promises, or async/await.
 
 [Read more about asynchronous programming](https://nodejs.org/en/docs)
 
@@ -264,4 +286,46 @@ Commonly used built-in modules include:
 
 Node.js provides the `fs` module to handle file operations like reading (`fs.readFile()`), writing (`fs.writeFile()`), and deleting (`fs.unlink()`). These operations can be done both synchronously and asynchronously.
 
-[Read more about file operations
+[Read more about file operations]
+
+# ⚙️ Intermediate-Level 
+
+### What is middleware in Node.js (Express)?
+
+Middleware functions have access to req, res, and next(). They are used for logging, authentication, error handling, etc.
+
+---
+
+### WWhat are streams in Node.js?
+
+Streams are used to handle reading/writing files or data in chunks. Types:
+
+- Readable
+- Writable
+- Duplex (both read and write)
+- Transform (e.g., compression)
+
+---
+
+### What is a buffer in Node.js?
+
+ A buffer stores binary data in memory outside the V8 heap. It’s used when working with file systems, TCP streams, etc.
+
+---
+
+### How does the fs module work?
+
+It provides functions to interact with the file system:
+
+const fs = require('fs');
+fs.readFile('file.txt', 'utf8', (err, data) => {});
+
+---
+
+### How do you handle errors in Node.js?
+
+- For sync code: use try...catch
+- For async callbacks: check err argument
+- For promises: use .catch() or try/catch with async/await
+
+---
