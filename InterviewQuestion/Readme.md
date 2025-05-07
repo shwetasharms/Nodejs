@@ -26,6 +26,16 @@ Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows JavaScrip
 
 ---
 
+### How is it different from JavaScript in the browser??
+
+ode.js is a runtime environment that allows JavaScript to be executed on the server-side. Unlike browser JavaScript, which interacts with the DOM and handles UI, Node.js can access the file system, network, and OS using built-in modules.
+
+[Read more about Node.js](https://nodejs.org/en/docs)
+
+[Back to top](#table-of-contents)
+
+---
+
 ### Explain the event-driven, non-blocking I/O model in Node.js.
 
 In Node.js, an event-driven architecture means actions (like HTTP requests) trigger events, and the event loop handles them asynchronously. The non-blocking I/O model ensures that operations, such as reading from a file, don't block the execution of the rest of the code. Instead, callbacks are used to handle the result once the operation completes.
@@ -75,6 +85,39 @@ npm is the default package manager for Node.js, allowing developers to install, 
 [Back to top](#table-of-contents)
 
 ---
+
+### What is the difference between require() and import?
+
+require() is used in CommonJS modules (default in Node.js).
+
+import is used in ES Modules (ESM). Requires "type": "module" in package.json.
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+### What are the global objects in Node.js?
+
+Examples include:
+
+__dirname, __filename
+
+process
+
+global
+
+Buffer
+
+setTimeout, setInterval
+
+[Read more about npm](https://www.npmjs.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
 
 # 2️⃣ Asynchronous Programming
 
