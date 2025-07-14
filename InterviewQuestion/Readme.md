@@ -26,6 +26,15 @@ Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows JavaScrip
 
 ---
 
+### What is Runtime Enviroment ?
+The Nodejs runtime environment is the software stack responsible for  installing your  web services code and  its dependencies and running  your services 
+
+[Read more about Node.js](https://nodejs.org/en/docs)
+
+[Back to top](#table-of-contents)
+
+---
+
 ### How is it different from JavaScript in the browser??
 
 ode.js is a runtime environment that allows JavaScript to be executed on the server-side. Unlike browser JavaScript, which interacts with the DOM and handles UI, Node.js can access the file system, network, and OS using built-in modules.
