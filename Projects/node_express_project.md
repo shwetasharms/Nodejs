@@ -94,6 +94,101 @@ app.listen(PORT, () => {
 npm run dev
 ```
 
+Here is your content formatted into a proper `README.md` file:
+
+---
+
+````md
+# Contact Manager App
+
+## Roadmap
+
+1. Express Project setup  
+2. Create Express Server  
+3. Thunder Client Server  
+4. Express Router Setup  
+5. Error Handling, Async Handler  
+6. Express Middleware  
+7. MongoDB  
+8. I use the Thunder Client for API testing
+
+---
+
+## Thunder Client
+
+Thunder Client is a lightweight and user-friendly REST API client extension for Visual Studio Code.  
+It allows developers to test HTTP requests directly inside the editor without switching to another app like Postman.
+
+---
+
+## Basic API Setup in `server.js`
+
+```js
+const express = require('express');
+const app = express();
+const PORT = 5000;
+
+// Basic GET route for API
+app.get('/api/contacts', (req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Hello world" });
+});
+
+// Use route middleware (to be added later)
+app.use();
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+````
+
+---
+
+## Creating Routes Folder Structure
+
+```
+project-root/
+│
+├── routes/
+│   └── contactRoutes.js
+```
+
+---
+
+## `contactRoutes.js`
+
+```js
+const express = require('express');
+const router = express.Router();
+
+router.route('/api/contacts').get((req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Hello world" });
+});
+
+module.exports = router;
+```
+
+---
+
+> 🔄 **Next Step:**
+> Don't forget to import and use the `contactRoutes` in your `server.js` using:
+
+```js
+const contactRoutes = require('./routes/contactRoutes');
+app.use(contactRoutes);
+```
+
+---
+
+```
+
+Let me know if you also want this structured in a real project layout with actual files or folder structure!
+```
+
+
 ---
 
 ## 📁 Folder Structure
