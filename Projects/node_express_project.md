@@ -168,6 +168,30 @@ router.route('/api/contacts').get((req, res) => {
   res.status(200).json({ message: "Hello world" });
 });
 
+router.route('/').post((req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Create new contact" });
+});
+
+router.route('/:id').get((req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Get contacts for id {req.params.id}" });
+});
+
+router.route('/:id').put((req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Update contacts for id {req.params.id}" });
+});
+
+router.route('/:id').delete((req, res) => {
+  res.send("message");
+  res.json({ message: "Hello world" });
+  res.status(200).json({ message: "Delete contact for id {req.params.id}" });
+});
+
 module.exports = router;
 ```
 OR 
