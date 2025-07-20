@@ -170,6 +170,20 @@ router.route('/api/contacts').get((req, res) => {
 
 module.exports = router;
 ```
+OR 
+
+```js
+const express = require('express');
+const router = express.Router();
+
+// GET request for /api/contacts
+router.route('/api/contacts').get((req, res) => {
+  // Only one response can be sent, so use one method below:
+  res.status(200).json({ message: "Hello world" });
+});
+
+module.exports = router;
+```
 
 ---
 
